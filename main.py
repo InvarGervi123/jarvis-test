@@ -24,6 +24,11 @@ import keyboard# #import pyautogui
 
 import os #2025
 
+from dotenv import load_dotenv #2025
+load_dotenv() #2025
+openai.api_key = os.getenv("OPENAI_API_KEY") #2025
+
+
 # Создаем объекты для распознавания речи и синтеза речи
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
@@ -64,7 +69,7 @@ def get_current_volume():
 def type_text(text):
     keyboard.write(text)
 
-openai.api_key = os.getenv("OPENAI_API_KEY") #2025
+#### 2025
 
 # Функция для взаимодействия с моделью
 def interact_with_gpt3(prompt):
